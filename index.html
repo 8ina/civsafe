@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Portfolio of Mohamed Ali - HSE Strategist & Infrastructure Risk Specialist">
+  <meta name="description" content="Portfolio of Mohamed Ali - HSE Specialist & Infrastructure Safety Professional">
   <title>CivSafe | Mohamed Ali</title>
   
   <!-- Fonts -->
@@ -59,6 +59,38 @@
       width: 100%;
       min-height: 100vh;
       transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .animate-in {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* RTL Support */
@@ -128,6 +160,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      animation: fadeIn 1s ease-out;
     }
 
     .profile-photo {
@@ -186,7 +219,7 @@
       transform: translateX(-50%);
     }
 
-    /* Certifications (The 70% Core) */
+    /* Certifications (The 70% Focus) */
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -198,7 +231,7 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 2rem;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .cert-group:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
@@ -249,7 +282,10 @@
       border-radius: 50px;
       font-size: 0.9rem;
       border: 1px solid rgba(255,255,255,0.2);
+      transition: transform 0.2s ease;
     }
+    
+    .tag:hover { transform: scale(1.05); }
     
     .tag.highlight-tag { background: var(--accent-secondary); border-color: var(--accent-secondary); font-weight: 600; }
 
@@ -261,7 +297,10 @@
       overflow: hidden;
       margin-bottom: 3rem;
       box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
+    .spotlight-card:hover { transform: translateY(-5px); box-shadow: 0 15px 50px rgba(0,0,0,0.1); }
 
     .spotlight-header {
       background: var(--accent);
@@ -312,7 +351,10 @@
       padding: 2rem;
       border-radius: 12px;
       border: 1px solid var(--border);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    
+    .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
     
     .project-card h4 { margin-bottom: 0.5rem; }
     .project-card .focus { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--subtext); margin-bottom: 1rem; display: block; }
@@ -335,7 +377,9 @@
     /* Controls & Mobile */
     .controls { display: flex; gap: 1rem; align-items: center; }
     .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text); cursor: pointer; }
-    .theme-toggle, .lang-toggle { cursor: pointer; background: none; border: 1px solid var(--border); padding: 0.5rem; border-radius: 50%; color: var(--text); }
+    .theme-toggle, .lang-toggle { cursor: pointer; background: none; border: 1px solid var(--border); padding: 0.5rem; border-radius: 50%; color: var(--text); transition: all 0.3s ease; }
+
+    .theme-toggle:hover, .lang-toggle:hover { background: var(--card-bg); transform: scale(1.05); }
 
     @media (max-width: 768px) {
       .spotlight-body { grid-template-columns: 1fr; padding: 1.5rem; }
@@ -372,16 +416,16 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section class="hero">
+  <section class="hero" id="about">
     <!-- IMPORTANT: Replace "profile.jpg" with your actual image filename -->
     <img src="profile.jpg" alt="Mohamed Ali" class="profile-photo" onerror="this.src='https://via.placeholder.com/160'">
     <h2 data-en="Mohamed Ali" data-ar="محمد علي">Mohamed Ali</h2>
-    <div class="role-title" data-en="HSE Strategist | Infrastructure Risk & Compliance" data-ar="خبير استراتيجي في الصحة والسلامة | مخاطر البنية التحتية والامتثال">
-      HSE Strategist | Infrastructure Risk & Compliance
+    <div class="role-title" data-en="HSE Specialist | Infrastructure Safety & Risk Systems" data-ar="أخصائي صحة وسلامة | سلامة البنية التحتية وأنظمة المخاطر">
+      HSE Specialist | Infrastructure Safety & Risk Systems
     </div>
-    <p data-en="Leveraging a B.E. in Civil Engineering and international HSE credentials (NEBOSH, IOSH, STPM-C), I blend engineering precision with proactive risk leadership. Currently serving at UNOPS, my focus is on developing scalable compliance frameworks and delivering zero-incident performance on complex infrastructure projects." 
-       data-ar="مستفيداً من بكالوريوس الهندسة المدنية وشهادات الصحة والسلامة الدولية (NEBOSH، IOSH، STPM-C)، أمزج بين الدقة الهندسية والقيادة الاستباقية للمخاطر. تركيزي الحالي في UNOPS هو تطوير أطر امتثال قابلة للتطوير وتحقيق أداء خالٍ من الحوادث في مشاريع البنية التحتية المعقدة.">
-       Leveraging a B.E. in Civil Engineering and international HSE credentials (NEBOSH, IOSH, STPM-C), I blend engineering precision with proactive risk leadership. Currently serving at UNOPS, my focus is on developing scalable compliance frameworks and delivering zero-incident performance on complex infrastructure projects.
+    <p data-en="Civil Engineer with international HSE credentials (NEBOSH, IOSH, STPM-C) focused on integrating engineering precision with proactive risk management. At UNOPS, I conduct risk assessments, implement compliance systems, and coordinate inspection and reporting processes for infrastructure projects." 
+       data-ar="مهندس مدني يحمل شهادات دولية في الصحة والسلامة (NEBOSH، IOSH، STPM-C) يركز على دمج الدقة الهندسية مع الإدارة الاستباقية للمخاطر. في UNOPS، أقوم بإجراء تقييمات المخاطر، وتنفيذ أنظمة الامتثال، وتنسيق عمليات التفتيش والإبلاغ لمشاريع البنية التحتية.">
+       Civil Engineer with international HSE credentials (NEBOSH, IOSH, STPM-C) focused on integrating engineering precision with proactive risk management. At UNOPS, I conduct risk assessments, implement compliance systems, and coordinate inspection and reporting processes for infrastructure projects.
     </p>
     <a href="cv.pdf" download class="theme-toggle" style="border-radius: 8px; padding: 0.8rem 1.5rem; text-decoration: none; display: inline-block; font-weight: 600;">
       <i class="fas fa-download"></i> Download CV
@@ -418,7 +462,7 @@
         <ul>
           <li>
             <span class="cert-name">Fire & Construction Safety Diploma (BSS)</span>
-            <span class="cert-desc" data-en="Deep technical expertise in high-risk construction environments." data-ar="خبرة تقنية عميقة في بيئات البناء عالية المخاطر.">Deep technical expertise in high-risk construction environments.</span>
+            <span class="cert-desc" data-en="Technical expertise in high-risk construction environments." data-ar="خبرة تقنية في بيئات البناء عالية المخاطر.">Technical expertise in high-risk construction environments.</span>
           </li>
           <li>
             <span class="cert-name">OSHA 30-Hour Construction</span>
@@ -426,7 +470,7 @@
           </li>
           <li>
             <span class="cert-name">B.E. Civil Engineering</span>
-            <span class="cert-desc" data-en="Engineering foundation allowing for structural risk assessment." data-ar="أساس هندسي يسمح بتقييم المخاطر الهيكلية.">Engineering foundation allowing for structural risk assessment.</span>
+            <span class="cert-desc" data-en="Engineering foundation for structural risk assessment." data-ar="أساس هندسي لتقييم المخاطر الهيكلية.">Engineering foundation for structural risk assessment.</span>
           </li>
         </ul>
       </div>
@@ -437,11 +481,11 @@
         <ul>
           <li>
             <span class="cert-name">KPIs & Reporting Safety Incidents</span>
-            <span class="cert-desc" data-en="Data-driven approach to tracking leading vs. lagging indicators." data-ar="نهج قائم على البيانات لتتبع المؤشرات الاستباقية مقابل المتأخرة.">Data-driven approach to tracking leading vs. lagging indicators.</span>
+            <span class="cert-desc" data-en="Data-driven approach to tracking safety indicators." data-ar="نهج قائم على البيانات لتتبع مؤشرات السلامة.">Data-driven approach to tracking safety indicators.</span>
           </li>
           <li>
             <span class="cert-name">Incident Investigation & RCA</span>
-            <span class="cert-desc" data-en="Turning incident data into preventative systemic changes." data-ar="تحويل بيانات الحوادث إلى تغييرات وقائية منهجية.">Turning incident data into preventative systemic changes.</span>
+            <span class="cert-desc" data-en="Applying incident data for preventative system improvements." data-ar="تطبيق بيانات الحوادث لإجراء تحسينات وقائية في النظام.">Applying incident data for preventative system improvements.</span>
           </li>
         </ul>
       </div>
@@ -449,15 +493,16 @@
 
     <!-- Global Standards Tags -->
     <div class="competencies-wrapper">
-      <h3 data-en="Advanced Technical Competence" data-ar="كفاءة تقنية متقدمة">Advanced Technical Competence</h3>
+      <h3 data-en="Technical Competence" data-ar="الكفاءة التقنية">Technical Competence</h3>
       <div class="tag-cloud">
         <div class="tag highlight-tag">ISO 45001 (OHSMS)</div>
         <div class="tag highlight-tag">DE Standards</div>
-        <div class="tag highlight-tag">ADSSC Guidelines</div>
-        <div class="tag">Risk Modeling (Bowtie/HAZOP)</div>
+        <div class="tag highlight-tag">UAE Infrastructure Safety (DEWA, ADSSC)</div>
+        <div class="tag">Bowtie Risk Analysis</div>
+        <div class="tag">Digital HSE Platforms</div>
+        <div class="tag">Incident Analysis Methodologies</div>
         <div class="tag">Regulatory Compliance</div>
-        <div class="tag">Crisis Management</div>
-        <div class="tag">Digital HSE Systems</div>
+        <div class="tag">Safety Inspection Protocols</div>
       </div>
     </div>
   </section>
@@ -479,7 +524,7 @@
             <i class="fas fa-toolbox" style="font-size:3rem; color:var(--subtext);"></i>
           </div>
           <h5 data-en="The Objective" data-ar="الهدف">The Objective</h5>
-          <p data-en="To move HSE from a reactive compliance function to a proactive, standardized digital system for infrastructure projects." data-ar="نقل الصحة والسلامة من وظيفة امتثال تفاعلية إلى نظام رقمي موحد واستباقي لمشاريع البنية التحتية.">To move HSE from a reactive compliance function to a proactive, standardized digital system for infrastructure projects.</p>
+          <p data-en="To transform HSE from reactive compliance to proactive, standardized digital systems for infrastructure projects." data-ar="تحويل الصحة والسلامة من الامتثال التفاعلي إلى أنظمة رقمية استباقية موحدة لمشاريع البنية التحتية.">To transform HSE from reactive compliance to proactive, standardized digital systems for infrastructure projects.</p>
         </div>
         <div class="spotlight-content">
           <div class="car-section">
@@ -487,11 +532,11 @@
             <p data-en="Fragmented documentation leading to inconsistent training and high administrative burden during audits." data-ar="توثيق مجزأ يؤدي إلى تدريب غير متسق وعبء إداري مرتفع أثناء التدقيق.">Fragmented documentation leading to inconsistent training and high administrative burden during audits.</p>
           </div>
           <div class="car-section">
-            <div class="car-title">Action (Advisory Intervention)</div>
-            <p data-en="Designed a centralized repository mapping 70+ regulatory templates against project lifecycles. Standardized KPI reporting structures aligned with global standards." data-ar="تصميم مستودع مركزي يربط أكثر من 70 نموذجاً تنظيمياً بدورات حياة المشروع. توحيد هياكل تقارير مؤشرات الأداء الرئيسية بما يتماشى مع المعايير العالمية.">Designed a centralized repository mapping 70+ regulatory templates against project lifecycles. Standardized KPI reporting structures aligned with global standards.</p>
+            <div class="car-title">Action</div>
+            <p data-en="Developed a centralized repository mapping regulatory templates against project lifecycles. Standardized KPI reporting structures aligned with global standards." data-ar="تطوير مستودع مركزي يربط النماذج التنظيمية بدورات حياة المشروع. توحيد هياكل تقارير مؤشرات الأداء الرئيسية بما يتماشى مع المعايير العالمية.">Developed a centralized repository mapping regulatory templates against project lifecycles. Standardized KPI reporting structures aligned with global standards.</p>
           </div>
           <div class="metric-box">
-            <i class="fas fa-arrow-up"></i> Result: Reduced site onboarding time by 15% & achieved 92% audit readiness score.
+            <i class="fas fa-check-circle"></i> Result: Created a digital toolkit that standardizes templates, improves documentation structure, and demonstrates capability for systematic HSE design.
           </div>
         </div>
       </div>
@@ -500,24 +545,24 @@
     <!-- Other Impact Cards -->
     <div class="project-grid">
       <div class="project-card">
-        <h4 data-en="Site Inspections" data-ar="تفتيش الموقع">Site Inspections</h4>
-        <span class="focus" data-en="Proactive Risk Modeling" data-ar="نمذجة المخاطر الاستباقية">Proactive Risk Modeling</span>
-        <p data-en="Utilized Bowtie analysis to identify high-priority risks on complex infrastructure sites." data-ar="استخدام تحليل Bowtie لتحديد المخاطر ذات الأولوية العالية في مواقع البنية التحتية المعقدة.">Utilized Bowtie analysis to identify high-priority risks on complex infrastructure sites.</p>
-        <span class="impact-stat" data-en="➔ 0 LTI (Lost Time Incidents) over 9 months." data-ar="➔ 0 حوادث مضيعة للوقت على مدى 9 أشهر.">➔ 0 LTI (Lost Time Incidents) over 9 months.</span>
+        <h4 data-en="Site Risk Assessment" data-ar="تقييم مخاطر الموقع">Site Risk Assessment</h4>
+        <span class="focus" data-en="Proactive Risk Management" data-ar="إدارة المخاطر الاستباقية">Proactive Risk Management</span>
+        <p data-en="Conducted risk assessments on infrastructure sites using Bowtie analysis to identify and prioritize critical safety risks." data-ar="إجراء تقييمات المخاطر في مواقع البنية التحتية باستخدام تحليل Bowtie لتحديد مخاطر السلامة الحرجة وتحديد أولوياتها.">Conducted risk assessments on infrastructure sites using Bowtie analysis to identify and prioritize critical safety risks.</p>
+        <span class="impact-stat" data-en="➔ Established proactive risk reporting and safety culture protocols." data-ar="➔ إنشاء بروتوكولات الإبلاغ الاستباقي عن المخاطر وثقافة السلامة.">➔ Established proactive risk reporting and safety culture protocols.</span>
       </div>
 
       <div class="project-card">
         <h4 data-en="Compliance Audits" data-ar="تدقيق الامتثال">Compliance Audits</h4>
         <span class="focus" data-en="Governance & Alignment" data-ar="الحوكمة والمواءمة">Governance & Alignment</span>
-        <p data-en="Led internal audits benchmarking against ISO 45001 and local regulatory codes." data-ar="قيادة التدقيق الداخلي والمقارنة المرجعية ضد ISO 45001 واللوائح المحلية.">Led internal audits benchmarking against ISO 45001 and local regulatory codes.</p>
-        <span class="impact-stat" data-en="➔ Closed 85% of non-conformance reports in Q1." data-ar="➔ إغلاق 85% من تقارير عدم المطابقة في الربع الأول.">➔ Closed 85% of non-conformance reports in Q1.</span>
+        <p data-en="Executed internal audits benchmarking against ISO 45001 and local regulatory codes, managing NCR tracking and closure processes." data-ar="تنفيذ التدقيق الداخلي والمقارنة المرجعية ضد ISO 45001 واللوائح المحلية، وإدارة عمليات تتبع وإغلاق تقارير عدم المطابقة.">Executed internal audits benchmarking against ISO 45001 and local regulatory codes, managing NCR tracking and closure processes.</p>
+        <span class="impact-stat" data-en="➔ Enhanced documentation systems and compliance communication." data-ar="➔ تحسين أنظمة التوثيق والتواصل المتعلق بالامتثال.">➔ Enhanced documentation systems and compliance communication.</span>
       </div>
 
       <div class="project-card">
-        <h4 data-en="Awareness Campaigns" data-ar="حملات التوعية">Awareness Campaigns</h4>
-        <span class="focus" data-en="Cultural Transformation" data-ar="التحول الثقافي">Cultural Transformation</span>
-        <p data-en="Shifted focus from lecture-based training to interactive, behavior-based safety briefings." data-ar="تحويل التركيز من التدريب القائم على المحاضرات إلى جلسات سلامة تفاعلية قائمة على السلوك.">Shifted focus from lecture-based training to interactive, behavior-based safety briefings.</p>
-        <span class="impact-stat" data-en="➔ Increased near-miss reporting by 200%." data-ar="➔ زيادة الإبلاغ عن الحوادث الوشيكة بنسبة 200%.">➔ Increased near-miss reporting by 200%.</span>
+        <h4 data-en="Safety Culture Initiatives" data-ar="مبادرات ثقافة السلامة">Safety Culture Initiatives</h4>
+        <span class="focus" data-en="Behavioral Safety" data-ar="السلامة السلوكية">Behavioral Safety</span>
+        <p data-en="Transformed training approaches from lecture-based to interactive, behavior-focused safety briefings to strengthen safety culture." data-ar="تحويل أساليب التدريب من القائمة على المحاضرات إلى جلسات سلامة تفاعلية تركز على السلوك لتعزيز ثقافة السلامة.">Transformed training approaches from lecture-based to interactive, behavior-focused safety briefings to strengthen safety culture.</p>
+        <span class="impact-stat" data-en="➔ Implemented effective site inspection and safety initiative protocols." data-ar="➔ تنفيذ بروتوكولات فعالة لتفتيش المواقع ومبادرات السلامة.">➔ Implemented effective site inspection and safety initiative protocols.</span>
       </div>
     </div>
   </section>
@@ -525,16 +570,16 @@
   <!-- FOUNDER'S NOTE -->
   <section id="contact" style="background: var(--card-bg); padding: 4rem 2rem; border-radius: 12px; margin-bottom: 2rem;">
     <div class="founder-section">
-      <h3 class="section-title" data-en="Founder's Note" data-ar="كلمة المؤسس">Founder's Note</h3>
-      <p class="founder-quote" data-en="&ldquo;Safety isn't just about compliance checklists; it's about engineering a culture where operational efficiency and risk reduction go hand in hand. My vision is to deliver sustainable HSE performance that integrates seamlessly with project delivery.&rdquo;" data-ar="&ldquo;السلامة ليست مجرد قوائم تحقق للامتثال؛ إنها تتعلق بهندسة ثقافة حيث تسير الكفاءة التشغيلية والحد من المخاطر جنباً إلى جنب. رؤيتي هي تقديم أداء مستدام للصحة والسلامة يتكامل بسلاسة مع تسليم المشروع.&rdquo;">
-        &ldquo;Safety isn't just about compliance checklists; it's about engineering a culture where operational efficiency and risk reduction go hand in hand. My vision is to deliver sustainable HSE performance that integrates seamlessly with project delivery.&rdquo;
+      <h3 class="section-title" data-en="Professional Philosophy" data-ar="الفلسفة المهنية">Professional Philosophy</h3>
+      <p class="founder-quote" data-en="&ldquo;Safety transcends compliance checklists—it's about engineering a culture where operational efficiency and risk reduction are intrinsically linked. My approach integrates systematic HSE practices with project delivery through methodical thinking and continuous improvement.&rdquo;" data-ar="&ldquo;السلامة تتجاوز قوائم التحقق الخاصة بالامتثال—إنها تتعلق بهندسة ثقافة حيث ترتبط الكفاءة التشغيلية والحد من المخاطر ارتباطاً جوهرياً. نهجي يدمج ممارسات الصحة والسلامة المنهجية مع تسليم المشروع من خلال التفكير المنهجي والتحسين المستمر.&rdquo;">
+        &ldquo;Safety transcends compliance checklists—it's about engineering a culture where operational efficiency and risk reduction are intrinsically linked. My approach integrates systematic HSE practices with project delivery through methodical thinking and continuous improvement.&rdquo;
       </p>
       <div style="margin-top: 2rem;">
         <h4 style="margin-bottom: 0.5rem;">Mohamed Ali</h4>
         <div class="contact-links" style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
-          <a href="mailto:mhmdalisuliman@gmail.com" style="color: var(--text); font-size: 1.5rem;"><i class="fas fa-envelope"></i></a>
-          <a href="https://linkedin.com/in/mohamed-s-b8929a28b" style="color: var(--text); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
-          <a href="https://wa.me/249900795293" style="color: var(--text); font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:mhmdalisuliman@gmail.com" style="color: var(--text); font-size: 1.5rem; transition: color 0.3s ease;"><i class="fas fa-envelope"></i></a>
+          <a href="https://linkedin.com/in/mohamed-s-b8929a28b" style="color: var(--text); font-size: 1.5rem; transition: color 0.3s ease;"><i class="fab fa-linkedin"></i></a>
+          <a href="https://wa.me/249900795293" style="color: var(--text); font-size: 1.5rem; transition: color 0.3s ease;"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
     </div>
@@ -592,6 +637,30 @@
 
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
+    });
+
+    // --- Scroll Animations ---
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with animate-on-scroll class
+    document.addEventListener('DOMContentLoaded', () => {
+      const animatedElements = document.querySelectorAll('.cert-group, .spotlight-card, .project-card, .competencies-wrapper, .founder-section');
+      
+      animatedElements.forEach(el => {
+        el.classList.add('animate-on-scroll');
+        observer.observe(el);
+      });
     });
   </script>
 </body>

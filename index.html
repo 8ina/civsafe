@@ -15,8 +15,8 @@
       --bg: #ffffff;
       --text: #121212;
       --subtext: #555555;
-      --accent: #1a1a1a; /* Professional Black/Dark Grey */
-      --accent-secondary: #0056b3; /* Strategic Blue for emphasis */
+      --accent: #1a1a1a;
+      --accent-secondary: #0056b3;
       --card-bg: #f8f9fa;
       --border: #e2e6ea;
       --dark-section: #2d2d2d;
@@ -24,7 +24,6 @@
       --success: #28a745;
     }
 
-    /* Dark Mode Variables */
     .dark-mode {
       --bg: #121212;
       --text: #f8f9fa;
@@ -59,7 +58,6 @@
       transition: background 0.3s ease, color 0.3s ease;
     }
 
-    /* Animations */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -72,13 +70,8 @@
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .animate-on-scroll {
@@ -92,12 +85,9 @@
       transform: translateY(0);
     }
 
-    /* RTL Support */
     [dir="rtl"] { text-align: right; }
     [dir="rtl"] .section-title::after { right: 50%; transform: translateX(50%); left: auto; }
-    [dir="rtl"] .project-spotlight-content { border-left: none; border-right: 4px solid var(--accent); padding-left: 0; padding-right: 2rem; }
 
-    /* Typography */
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
@@ -106,7 +96,6 @@
 
     .highlight { color: var(--accent-secondary); font-weight: 700; }
 
-    /* Header & Nav */
     header {
       background: var(--bg);
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -149,7 +138,6 @@
 
     .nav-menu a:hover { color: var(--accent-secondary); }
 
-    /* Hero Section */
     .hero {
       text-align: center;
       padding: 8rem 2rem 6rem;
@@ -176,7 +164,10 @@
 
     .profile-photo:hover { filter: grayscale(0%); transform: scale(1.02); }
 
-    .hero h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 0.5rem; }
+    .hero h2 { 
+      font-size: clamp(2rem, 5vw, 3.5rem); 
+      margin-bottom: 0.5rem; 
+    }
     
     .hero .role-title {
       font-size: clamp(1.1rem, 2.5vw, 1.4rem);
@@ -184,6 +175,7 @@
       font-weight: 600;
       margin-bottom: 1.5rem;
       letter-spacing: 0.5px;
+      line-height: 1.3;
     }
 
     .hero p {
@@ -193,7 +185,6 @@
       margin: 0 auto 2.5rem;
     }
 
-    /* Generic Section Styles */
     section {
       max-width: 1200px;
       margin: 5rem auto;
@@ -218,7 +209,6 @@
       transform: translateX(-50%);
     }
 
-    /* Certifications (The 70% Focus) */
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -257,7 +247,6 @@
     .cert-name { font-weight: 700; display: block; margin-bottom: 0.3rem; }
     .cert-desc { font-size: 0.85rem; color: var(--subtext); font-style: italic; }
 
-    /* Competencies Tags */
     .competencies-wrapper {
       background: var(--dark-section);
       color: white;
@@ -288,7 +277,6 @@
     
     .tag.highlight-tag { background: var(--accent-secondary); border-color: var(--accent-secondary); font-weight: 600; }
 
-    /* Strategic Impact (Projects) */
     .spotlight-card {
       background: var(--bg);
       border: 1px solid var(--border);
@@ -338,7 +326,6 @@
       border: 1px solid rgba(40, 167, 69, 0.2);
     }
 
-    /* Smaller Project Cards */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -359,7 +346,6 @@
     .project-card .focus { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--subtext); margin-bottom: 1rem; display: block; }
     .impact-stat { font-weight: 700; color: var(--accent-secondary); margin-top: 1rem; display: block; }
 
-    /* Founder's Note */
     .founder-section {
       text-align: center;
       max-width: 800px;
@@ -373,7 +359,6 @@
       margin-bottom: 2rem;
     }
 
-    /* Controls & Mobile */
     .controls { display: flex; gap: 1rem; align-items: center; }
     .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text); cursor: pointer; }
     .theme-toggle, .lang-toggle { cursor: pointer; background: none; border: 1px solid var(--border); padding: 0.5rem; border-radius: 50%; color: var(--text); transition: all 0.3s ease; }
@@ -417,9 +402,7 @@
   <section class="hero" id="about">
     <img src="profile.jpg" alt="Mohamed Ali" class="profile-photo" onerror="this.src='https://via.placeholder.com/160'">
     <h2 data-en="Mohamed Ali" data-ar="محمد علي">Mohamed Ali</h2>
-    <div class="role-title" data-en="HSE Professional
- & Civil Engineer" data-ar=" مهندس مدني محترف في السلامه ، الصحه و البيئه HSE Professional & Civil Engineer 
-    </div>
+    <div class="role-title" data-en="HSE Professional & Civil Engineer" data-ar="مهندس مدني ومحترف في السلامة والصحة والبيئة">HSE Professional & Civil Engineer</div>
     <p data-en="Civil Engineer with international HSE credentials (NEBOSH, OSHA , IOSH , STPM-C) focused on integrating engineering precision with proactive risk management. I support high-level risk management, compliance systems, and coordinate inspection and reporting processes for infrastructure projects, applying systematic thinking to HSSE challenges." 
        data-ar="مهندس مدني يحمل شهادات دولية في الصحة والسلامة (NEBOSH، , OSHA , IOSH ، STPM-C) يركز على دمج الدقة الهندسية مع الإدارة الاستباقية للمخاطر. في UNOPS، أقوم بإجراء تقييمات المخاطر، وتنفيذ أنظمة الامتثال، وتنسيق عمليات التفتيش والإبلاغ لمشاريع البنية التحتية.">
        Civil Engineer with international HSE credentials (NEBOSH, OSHA , IOSH , STPM-C) focused on integrating engineering precision with proactive risk management. I support high-level risk management, compliance systems, and coordinate inspection and reporting processes for infrastructure projects, applying systematic thinking to HSSE challenges.
@@ -586,7 +569,6 @@
   </footer>
 
   <script>
-    // --- Dark Mode Logic ---
     const themeToggle = document.getElementById('themeToggle');
     const body = document.body;
     const icon = themeToggle.querySelector('i');
@@ -602,7 +584,6 @@
       }
     });
 
-    // --- Language Logic ---
     const langToggle = document.getElementById('langToggle');
     const elements = document.querySelectorAll('[data-en]');
 
@@ -617,16 +598,13 @@
         const enText = el.getAttribute('data-en');
         const arText = el.getAttribute('data-ar');
         if (isRTL) {
-          // Switch to English
           el.textContent = enText;
         } else {
-          // Switch to Arabic
           el.textContent = arText;
         }
       });
     });
 
-    // --- Mobile Menu ---
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
 
@@ -634,7 +612,6 @@
       navMenu.classList.toggle('active');
     });
 
-    // --- Scroll Animations ---
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -648,7 +625,6 @@
       });
     }, observerOptions);
 
-    // Observe all elements with animate-on-scroll class
     document.addEventListener('DOMContentLoaded', () => {
       const animatedElements = document.querySelectorAll('.cert-group, .spotlight-card, .project-card, .competencies-wrapper, .founder-section');
       
